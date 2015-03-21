@@ -52,26 +52,32 @@
   <ul id="menu" class="menu">
     
       
-      <li class="menu-item menu-item-home">
-        <a href="/">
-          <i class="menu-item-icon icon-home"></i> <br />
-          首页
+          
+            <li class="menu-item menu-item-home">
+              <a href="/">
+                <i class="menu-item-icon icon-home"></i> <br />
+          
+          home
         </a>
       </li>
     
       
-      <li class="menu-item menu-item-archives">
-        <a href="/archives">
-          <i class="menu-item-icon icon-archives"></i> <br />
-          归档
+          
+            <li class="menu-item menu-item-archives">
+              <a href="/archives">
+                <i class="menu-item-icon icon-archives"></i> <br />
+          
+          archives
         </a>
       </li>
     
       
-      <li class="menu-item menu-item-tags">
-        <a href="/tags">
-          <i class="menu-item-icon icon-tags"></i> <br />
-          标签
+          
+            <li class="menu-item menu-item-contact sidebar-toggle2">
+              <a href="/#">
+                <i class="menu-item-icon icon-about"></i> <br />
+          
+          contact
         </a>
       </li>
     
@@ -204,9 +210,13 @@
             <span class="site-state-item-name">标签</span>
         </div>
         <div class="site-state-item site-state-pages">
-            <span class="site-state-item-count">1</span>
+            <span class="site-state-item-count">0</span>
             <span class="site-state-item-name">页面</span>
         </div>
+      </div>
+      <div class="site-author-contact motion-element">
+        <p class="site-author-contact">Get in touch</p>
+        <p class="site-author-contact-mail"><i class="icon-pen"></i> tylerbrothers1@gmail.com</p>
       </div>
 
       
@@ -407,6 +417,11 @@
 
     function sidebatToggleMotion () {
       sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      $('.sidebar-toggle2').on('click', function () {
         isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
         isSidebarVisible = !isSidebarVisible;
       });
