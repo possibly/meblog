@@ -74,7 +74,7 @@
       
           
             <li class="menu-item menu-item-contact sidebar-toggle2">
-              <a href="/#">
+              <a href="javascript:;">
                 <i class="menu-item-icon icon-about"></i> <br />
           
           contact
@@ -104,7 +104,7 @@
     
      
     
-    Um..! 1 post. Keep on posting.
+    Um..! 2 posts in total. Keep on posting.
   </span>
 
   
@@ -132,8 +132,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/03/21/hello-world/">
-                Hello World
+              <a class="post-title-link" href="/2015/03/25/Hosting-OpenHatchs-Event-at-CCSF/">
+                Hosting OpenHatch's Event at City College
               </a>
             
           
@@ -143,7 +143,54 @@
       <div class="post-meta">
         <span class="post-time">
           
-            03-21
+            03-26
+          
+        </span>
+        
+          
+        
+      </div>
+    </div>
+
+    
+
+    
+  </div>
+
+
+
+  
+
+    
+    
+    
+
+    
+    
+
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/24/OSX-Yosemite-Login-Screen-Artifacts-Bug/">
+                OSX Yosemite Login Screen Artifacts Bug
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            03-25
           
         </span>
         
@@ -188,11 +235,11 @@
       <p class="site-description motion-element"></p>
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </div>
         <div class="site-state-item site-state-tags">
-            <span class="site-state-item-count">0</span>
+            <span class="site-state-item-count">2</span>
             <span class="site-state-item-name">tags</span>
         </div>
         <div class="site-state-item site-state-pages">
@@ -203,6 +250,7 @@
       <div class="site-author-contact motion-element">
         <p class="site-author-contact">Get in touch</p>
         <p class="site-author-contact-mail"><i class="icon-pen"></i> tylerbrothers1@gmail.com</p>
+        <a href="https://github.com/possibly" target="_blank" class="site-author-contact-github"><i class="icon-star"></i> https://github.com/possibly</a>
       </div>
 
       
@@ -402,9 +450,36 @@
         isSidebarVisible = !isSidebarVisible;
       });
 
+      // For 'Contact' navbar button.
       $('.sidebar-toggle2').on('click', function () {
-        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
-        isSidebarVisible = !isSidebarVisible;
+
+        // Check if we are in a post.
+        if ( $('#sidebar-nav ispost') ){
+          // Make the SideBar visible if its not already.
+          // Make the Overview section visible if its not already.
+          if ( !isSidebarVisible && !$("[data-target='site-overview']").hasClass('sidebar-nav-overview sidebar-nav-active') ){ 
+            sidebarShowMotion(); 
+            $('.sidebar-nav li').trigger('click');
+            isSidebarVisible = !isSidebarVisible;
+          }
+          // SideBar is already visible.
+          // Make the Overview section visible if its not already.
+          else if(isSidebarVisible && !$("[data-target='site-overview']").hasClass('sidebar-nav-overview sidebar-nav-active')){
+            $('.sidebar-nav li').trigger('click');
+          }
+          // SideBar is already visible
+          // Overview section is already visible
+          // Act like a normal toggle.
+          else {
+            isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+            isSidebarVisible = !isSidebarVisible;
+          }
+
+        // Not in a post, behave like normal.
+        }else{
+          isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+          isSidebarVisible = !isSidebarVisible;
+        }
       });
 
       sidebarToggle.hover(function () {

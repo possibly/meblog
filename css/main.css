@@ -1013,7 +1013,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b5e434;
+  background: #e8ffff;
 }
 .sidebar-nav {
   margin: 0;
@@ -1745,6 +1745,10 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
-p.site-author-contact {
+p.site-author-contact-mail {
   color: #f5f5f5;
+}
+.sidebar a {
+  color: #f5f5f5;
+  border: none;
 }
