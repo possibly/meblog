@@ -18,9 +18,9 @@
 
 
 
-	<meta name="keywords" content="osx, yosemite, artifacts, macbook, pro, 2011, fix, bug, error, artifacts, artifact," />
+	<meta name="keywords" content="open source, bridge troll, railsbridge, junior, jump, day 1, first contribution, ruby, rails," />
 
-  <title> OSX Yosemite Login Screen Artifacts Bug // Tyler Brothers </title>
+  <title> Contributing to Bridge Troll, Junior Jump Day 1 // Tyler Brothers </title>
 </head>
 
 <body>
@@ -97,7 +97,7 @@
           
           
             
-              OSX Yosemite Login Screen Artifacts Bug
+              Contributing to Bridge Troll, Junior Jump Day 1
             
           
         </h1>
@@ -106,7 +106,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            Posted on 2015-03-25
+            Posted on 2015-07-22
           
         </span>
         
@@ -122,35 +122,16 @@
         
 
         
-          <p>When attempting to login to my late 2011 MacBook Pro today, I found my screen acting just like the screen in this video: </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kCLNOa1Gvs0" frameborder="0" allowfullscreen></iframe>
-
-<p>Jeez.<br><a id="more"></a> </p>
-<h1 id="The_problem">The problem</h1><p>I spent some time googling random words attempting to describe the issue until I came across the above video on Youtube. The solution posted in the comments did not entirely work for me; I found that my flashing screen returned upon restart.</p>
-<p>My friend <a href="http://www.jimmyh.su/" target="_blank" rel="external">Jimmy Hsu</a> noticed that the solution involved<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /System/Library/Extensions/ATI* .</span><br><span class="line">mv /System/Library/Extensions/AMD* .</span><br></pre></td></tr></table></figure></p>
-<p>Which made him realize that issue was related to my graphics card. He remembered reading <a href="http://www.zdnet.com/article/little-utility-rescues-a-macbook-pro-with-failing-video/" target="_blank" rel="external">about</a> <a href="http://www.macrumors.com/2014/10/28/macbook-pro-2011-graphics-lawsuit/" target="_blank" rel="external">issues</a> <a href="http://appleinsider.com/articles/14/08/12/apple-ignores-calls-to-fix-2011-macbook-pro-failures-as-problem-grows" target="_blank" rel="external">with</a> MacBook Pro’s from 2011, and a short trip to google <a href="http://earthwithsun.com/questions/836910/disable-discrete-graphics-card-on-macbook-pro-early-2011" target="_blank" rel="external">landed me at this website</a> which contained a very detailed solution.</p>
-<p>In short, the hardware in late MacBook Pro 2011’s is faulty.</p>
-<h1 id="The_solution">The solution</h1><p>Apple has finally acknowledged the defect and are currently offering extended warranties and an entire repair program, <a href="http://www.macworld.co.uk/news/mac/widespread-2011-macbook-pro-failures-petition-lawsuit-repair-programme-3497935/" target="_blank" rel="external">according to Macworld.co.uk</a>.</p>
-<p>If one is looking for a short term solution to back up ones files (like I was), there is a solution that worked for me. My understanding is that this solution disables one’s graphics card drivers, which gets rid of the crazy flashing login screen. Then, one uses ‘switchGPU’, a program which is a wrapper for gfxCardStatus. switchGPU will enable integrated graphics when you login.</p>
-<h2 id="Short_term_solution">Short term solution</h2><ol>
-<li>Boot into Single User Mode (cmd+S while booting)</li>
-<li>Issue the commands (NOTE: some commands will take a short while to complete. Be patient)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fsck -fy</span><br><span class="line">mount -uw /</span><br><span class="line">mkdir /Disabled_System_Library_Extensions</span><br><span class="line"><span class="built_in">cd</span> /Disabled_System_Library_Extensions</span><br><span class="line">mv /System/Library/Extensions/ATI* .</span><br><span class="line">mv /System/Library/Extensions/AMD* .</span><br><span class="line">touch /System/Library/Extensions</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>One has now disabled their graphics card drivers.</p>
-<ol>
-<li>Login to your account. Dont be suprised at how slow and ‘laggy’ your display is, we are about to fix that.</li>
-<li>Install <a href="https://github.com/joachimroeleveld/switchGPU/" target="_blank" rel="external">switchGPU</a> by following the instructions in the README.md</li>
-<li>Set your account to auto-login</li>
-<li>Make sure ‘Automatic Graphics Switching’ setting is checked under the ‘Energy Saver’ section in System Preferences.</li>
-</ol>
-<p>You should be able to use your system and backup your files!</p>
-<h2 id="The_drawbacks">The drawbacks</h2><p>This solution is SHORT TERM. GET YOUR MACBOOK FIXED! The underlying issue is faulty hardware, and if you don’t get that fixed then your computer will experience complete failure at some point.</p>
-<p>This solution requires auto-login, which has obvious security issues.</p>
-<p>Taken from the answer on Earthwithsun.com:</p>
-<blockquote>
-<p>The problem with this method is that the OS will switch to<br>discrete graphics whenever you run some app that uses graphics<br>acceleration. So this is not a permanent solution.</p>
-</blockquote>
+          <p><a href="http://blog.carbonfive.com/2015/06/15/introducing-junior-jump-extended/" target="_blank" rel="external">Junior Jump Extended</a> is a program run by the folks at Carbon Five where we pair with Carbon Five employees to contribute to RailsBridges’ scheduling webapp called <a href="https://www.bridgetroll.org/" target="_blank" rel="external">Bridge Troll</a>. I heard about it from Katherine, a friend and co-officer from the Coders Club at City College, practically the day before the deadline to apply. “I don’t know Ruby [the programming language] or Rails, but I can learn it for this series,” I frantically typed into the application form, hoping to reassure both them and myself.<br><a id="more"></a><br><img src="mostgroup.jpg" title="Almost the whole gang..." align="center"></p>
+<h1 id="The_application">The application</h1><p>Receiving the acceptance letter was a bit of a happy shock. I thought it was kind of a long shot applying for ostensibly selective volunteer opportunity and not knowing the language or framework we would be developing in. In my defense, I do have familiarity working with webapps in the similar-ish language Python thanks to a previous internship opportunity and my own inability to not tinker with computer things.</p>
+<p>Speaking to the people out there who are trying to snag their first volunteer or employment opportunity doing programming: Apply. 100% of the times you don’t apply, you don’t get the opportunity. Being honest is always a good policy, so don’t lie about what you can do, but do find a place on the application to share your efforts as you attempt to gain more experience programming. Hopefully your coordinator or employer will see the value in someone in teaching someone who is deeply interested in the material they are offering.</p>
+<h1 id="Preparing">Preparing</h1><p>So, now I had to learn Ruby and Ruby on Rails. I had a few weeks, so I took some time to peruse various options. I started with <a href="http://learnrubythehardway.org/book/" target="_blank" rel="external">Learning Ruby The Hard Way</a> since I &lt;3 Zed Shaw and I learned Python from his similarly named series. I found it to be to be probably perfect for an absolute beginner, but not that great for someone already familiar with a few programming languages and styles. The hunt ended with <a href="https://rubymonk.com/" target="_blank" rel="external">Rubymonk</a> which is an excellent set of free tutorials aimed at people already familiar with the basics programming. The real key is the embedded runnable code snippets and test-oriented practice problems that come with the tutorials. The embedded snippets not only allow you to see the output of code, but give one the important ability to modify the code to iron out any questions one has instantly. The test-oriented practice problems are about at the end of every lesson and test on subjects that came before the current chapter, plus material just covered in the lesson. These two features really helped me get a feel for and understanding of Ruby quickly. As for Ruby on Rails, I just ran through there latest <a href="http://guides.rubyonrails.org/getting_started.html" target="_blank" rel="external">Getting Started with Rails tutorial</a> that’s advertised on the Rails website. I am familiar with Django and Flask, so most of the concepts that Rails has are familiar to me.</p>
+<h1 id="The_first_day">The first day</h1><p>Of course, my first day at the Junior Jump meet up I arrived a bit late. After being let into the building and walking up a flight of stairs, I arrive to find a small group of people sitting around a table giving short introductions about themselves. A minute or so after I sit down at the table I am told its my turn to introduce myself. Taking the queue from the previous person, I answer the two ice-breaker type questions of who I am and what is my favorite food with “I am a human, and I like tofurkey.” The leader of the introduction circle jumps in to clarify that I am a Junior Jump volunteer and we eventually move into a meeting room with a giant screen.</p>
+<p>While I am listening to a wonderful Lillie Chillen, one of the folks from RailsBridge, I infer more about the structure of the day and people around me. Two people from RailsBridge who are involved with Bridge Troll are here to answer any questions, half the people are mentors from Carbon Five and will be pairing with the other half of the group who are volunteers (“Juniors”). Lillie gives us an excellent and humor filled intro to the Rails Bridge projects and has even setup a separate section on there project management tool just for beginner friendly coding tasks for us. By the end of our time in the meeting room, I am paired with my mentor, Marc.<br><img src="marcandme.jpg" title="My mentor Marc, from Carbon Five, and myself." align="center"><br>Marc and I went to our spot in the office and ended up talking for probably an hour straight about all sorts of topics ranging from programming to making espresso. I felt like we were bonding almost too well, for by the time one of the people from RailsBridge came around to ask us if we had any questions, we realized we had not even started!</p>
+<h1 id="Learnings_and_highlights">Learnings and highlights</h1><p>One interesting idea I learned from Marc was the usefulness of a numeric scale to rate the complexity of a problem. Regardless of whether or not the client is technically minded, a point scale gives both the client and the company a common language to express how difficult a problem should be. If the client or a fellow developer think a problem is a 0 and you think a problem is a 5, then it is obvious that there is miscommunication about some aspect of the task. A point scale also drives conversations both internally among developers and externally with clients about the necessary steps that must be taken to finish a project. If on a fibonnaci scale (0,1,2,3,5,8) a problem is determined to be an 8, then its a good indicator that the problem is too large and must be shrunk down to smaller sub-problems.  Finally, in Marc’s experience, it is much easier to assign a problem a difficulty rating rather than a time estimate. Points also have the additional advantage over time estimates in that they can be added up. Members of a project can see how many points they can typically finish in a given week, and assign themselves tasks in the future accordingly.</p>
+<p>Getting to work with Marc and having Lillie there to answer any of our questions made contributing code to my first open source project surprisingly easy. The tools being used are all modern, my questions get answered in seconds instead of frustrating hours or days of waiting for a reply on a forum and the free lunch does not hurt!</p>
+<p>One of the greatest bits about this type of opportunity is getting to know the other people who obviously have some of the same interests and passions as you do. Lunch was a great opportunity to meet everyone, though I only ended up talking with a few people. The group size is small so its easy to get to talk with everyone, I just was finding myself engrossed in the conversations I was in!</p>
+<p>So far super psyched on contributing to a project with a bunch of talented and interesting people. I also used Bridge Troll this <a href="http://thetylerbrothers.com/2015/06/Hosting-OpenHatchs-Event-at-CCSF/" target="_blank" rel="external">last semester when organizing the Open Hatch event</a>, so I have a bit of extra attachment to this project. I’m hoping to show up to the next meeting with my tasks completed so I can start cracking on some of the features I wished I had when I was planning that event.</p>
 
         
       </div>
@@ -161,8 +142,8 @@
         
           <div class="post-tags">
             
-              <a href="/tags/osx-yosemite-artifacts-macbook-pro-2011-fix-bug-error-artifacts-artifact/">
-                #osx, yosemite, artifacts, macbook, pro, 2011, fix, bug, error, artifacts, artifact
+              <a href="/tags/open-source-bridge-troll-railsbridge-junior-jump-day-1-first-contribution-ruby-rails/">
+                #open source, bridge troll, railsbridge, junior, jump, day 1, first contribution, ruby, rails
               </a>
             
           </div>
@@ -172,11 +153,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/05/CCSF-Coders-Club-Reflections-and-Visions/">CCSF Coders Club: Reflections and Visions</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/06/Hosting-OpenHatchs-Event-at-CCSF/">Hosting OpenHatch's Event at CCSF</a>
               
             </div>
           </div>
@@ -267,7 +248,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The_problem"><span class="nav-number">1.</span> <span class="nav-text">The problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The_solution"><span class="nav-number">2.</span> <span class="nav-text">The solution</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Short_term_solution"><span class="nav-number">2.1.</span> <span class="nav-text">Short term solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The_drawbacks"><span class="nav-number">2.2.</span> <span class="nav-text">The drawbacks</span></a></li></ol></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The_application"><span class="nav-number">1.</span> <span class="nav-text">The application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Preparing"><span class="nav-number">2.</span> <span class="nav-text">Preparing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The_first_day"><span class="nav-number">3.</span> <span class="nav-text">The first day</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Learnings_and_highlights"><span class="nav-number">4.</span> <span class="nav-text">Learnings and highlights</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
